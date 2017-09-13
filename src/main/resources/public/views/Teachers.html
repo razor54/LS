@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/head.css">
+</head>
+<body>
+<h1>Teachers</h1>
+<h3>Check all <a href="/users">users</a> .</h3>
+<hr>
+<table>
+    <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Number</th>
+    </tr>
+    %s
+</table>
+<form action="/teachers" method="post">
+    Email:<br>
+    <input type="email" name="email" required="required"> <br>
+    Name:<br>
+    <input type="text" name="name" required="required"> <br>
+    Number:<br>
+    <input type="number" name="num" required="required"> <br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+%s
+<a href = "/" class="button"> Index </a>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Programmes</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/head.css">
+</head>
+<body>
+
+<h1>Programmes</h1>
+<hr>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>PID</th>
+        <th>Length</th>
+    </tr>
+    %s
+</table>
+<form action="/programmes" method="post">
+    Name:<br>
+    <input type="text" name="name" required="required"> <br>
+    PID:<br>
+    <input type="text" name="pid" required="required"> <br>
+    Length:<br>
+    <input type="text" name="length" required="required"> <br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+%s
+<a href = "/" class="button"> Index </a>
+</body>
+</html>

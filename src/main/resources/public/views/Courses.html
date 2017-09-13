@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Courses</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/head.css">
+</head>
+<body>
+<h1>Courses</h1>
+<hr>
+<table>
+    <tr>
+        <th>Mandatory</th>
+        <th>Name</th>
+        <th>Acronym</th>
+        <th>Coordinator</th>
+    </tr>
+    %s
+</table>
+
+<form action="/courses" method="post">
+    Coordinator:<br>
+    <input type="number" name="teacher" required="required"> <br>
+    Acronym:<br>
+    <input type="text" name="acr" required="required"> <br>
+    Name:<br>
+    <input type="text" name="name" required="required"> <br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+%s
+<a href = "/" class="button"> Index </a>
+</body>
+</html>

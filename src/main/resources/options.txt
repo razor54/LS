@@ -1,0 +1,78 @@
+Use
+
+Course management
+
+    POST /courses - creates a new course, given the following parameters
+        name - course name.
+        acr - course acronym.
+        teacher - number of the coordinator teacher.
+    GET /courses - shows all courses.
+    GET /courses/{acr} - shows the course with the acr acronym (e.g. GET /courses/ls).
+
+Class management
+
+    POST /courses/{acr}/classes - creates a new class on the course with acr acronym, given the following parameters
+        sem - semester identifier (e.g. 1415v).
+        num - class number - (e.g. D1).
+    GET /courses/{acr}/classes - shows all classes for a course.
+    GET /courses/{acr}/classes/{sem} - shows all classes of the acr course on the sem semester.
+    GET /courses/{acr}/classes/{sem}/{num} - shows the classes of the acr course on the sem semester and with num number.
+    POST /courses/{acr}/classes/{sem}/{num}/students - adds a new student to a class, given the following parameter that can occur multiple times (e.g. numStu=12345&numStu=54321).
+        numStu - student number.
+    GET /courses/{acr}/classes/{sem}/{num}/students - shows all students of a class.
+    GET /courses/{acr}/classes/{sem}/{num}/students/sorted - returns a list with all students of the class, ordered by increasing student number.
+    DELETE /courses/{acr}/classes/{sem}/{num}/students/{numStu} - removes a student from a class.
+
+Programme management
+
+    GET /programmes - list all the programmes.
+    POST /programmes - creates a new programme, given the following parameters
+        pid - programme acronym (e.g. "LEIC").
+        name - programme name.
+        length - number of semesters.
+    GET /programmes/{pid} - shows the details of programme withpid` acronym.
+    POST /programmes/{pid}/courses - adds a new course to the programme pid, given the following parameters
+        acr - the course acronym.
+        mandatory - true if the course is mandatory.
+        semesters - comma separated list of curricular semesters.
+    GET /programmes/{pid}/courses - shows the course structure of programme pid.
+
+User management
+
+    POST /teachers - creates a new teacher, given the following parameters
+        num - teacher number.
+        name- teacher name.
+        email - teacher email.
+        Example: POST /teachers num=1207&name=Pedro+F?lix&email=pedrofelix@....
+
+    POST /students - creates a new student, given the following parameters
+        num - student number.
+        name- student name.
+        email - student email.
+        pid - programme acronym.
+
+    GET /users - shows all users.
+
+    GET /teachers - shows all teachers.
+
+    GET /students - shows all students.
+
+    GET /teachers/{num} - shows the teacher with number num (e.g. GET /teachers/1207).
+
+    GET /students/{num} - shows the student with the number num.
+
+    PUT /teachers/{num} - updates an existent teacher, given all required parameters.
+
+    PUT /students/{num} - updates an existent student, given all required parameters.
+
+Teacher management
+
+    POST /courses/{acr}/classes/{sem}/{num}/teachers - adds a new teacher to a class, given the following parameters
+    numDoc - teacher number
+    GET /courses/{acr}/classes/{sem}/{num}/teachers - shows all teachers for a class.
+    GET /teachers/{num}/classes - shows all classes for the teacher with num number.
+
+
+    OPTION / - presents a list of available commands and their characteristics.
+
+EXIT / - ends the application.

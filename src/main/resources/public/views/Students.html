@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/head.css">
+</head>
+<body>
+<h1>Students</h1>
+<hr>
+<table>
+    <tr>
+        <th>Email</th>
+        <th>Name</th>
+        <th>Programme ID</th>
+        <th>Number</th>
+    </tr>
+    %s
+</table>
+<form action="/students" method="post">
+    Email:<br>
+    <input type="email" name="email" required="required"> <br>
+    Name:<br>
+    <input type="text" name="name" required="required"> <br>
+    Number:<br>
+    <input type="number" name="num" required="required"> <br>
+    Programme ID:<br>
+    <input type="text" name="pid" required="required"> <br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+%s
+<a href = "/" class="button"> Index </a>
+</body>
+</html>

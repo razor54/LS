@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Course Classes</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/head.css">
+</head>
+<body>
+<table>
+    <tr>
+        <th>Course Acronym</th>
+        <th>Semester</th>
+        <th>Class ID</th>
+    </tr>
+    %s
+</table>
+<form action="" method="post">
+    Semester:<br>
+    <input type="text" name="sem" required="required" value="%s"> <br>
+    Class ID:<br>
+    <input type="text" name="num" required="required" value="%s"> <br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+%s
+<a href = "/" class="button"> Index </a>
+</body>
+</html>
